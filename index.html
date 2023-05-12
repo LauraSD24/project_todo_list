@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">to do list</h1>
+      <div class="container_date">
+        <h3 class="week_day"></h3>
+        <div class="container_show_date">
+          <div class="item_date">
+            <h5>Día</h5>
+            <h2 class="number_date number_day"></h2>
+          </div>
+          <div class="item_date">
+            <h5>Mes</h5>
+            <h2 class="number_date number_month"></h2>
+          </div>
+          <div class="item_date">
+            <h5>Año</h5>
+            <h2 class="number_date number_year"></h2>
+          </div>
+        </div>
+      </div>
+      <div class="container_add_task">
+        <input
+          type="text"
+          placeholder="Añadir tarea . . ."
+          class="input_add_task"
+        /><i class="fa-solid fa-plus icon_add"></i>
+      </div>
+      <div class="container_task">
+        <div class="container_task_inprocess">
+          <h3 class="title_task">En proceso</h3>
+          <div class="container_list_task">
+            <div class="task">
+              <input type="checkbox" class="check_task" id="check_in_process"/><label for="check_in_process" class="label_check"></label>
+              <p class="description_task">Tarea 1</p>
+              <div class="container_icons_task">
+                <i class="fa-regular fa-pen-to-square icon_task"></i>
+                <i class="fa-solid fa-trash-can icon_task"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container_task_completed">
+          <h3 class="title_task">Finalizadas</h3>
+          <div class="container_list_task">
+            <div class="task">
+              <input type="checkbox" class="check_task" id="check_completed"/><label for="check_completed" class="label_check"></label>
+              <p class="description_task">Tarea 2</p>
+              <div class="container_icons_task">
+                <span class="date_task_completed">02/02/23</span>
+                <i class="fa-solid fa-trash-can icon_task"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/index.js"></script>
+</html>
