@@ -79,7 +79,7 @@ body{
 
 .container_add_task{
     /* border: var(--border); */
-    width: 30%;
+    width: 400px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -141,6 +141,7 @@ body{
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
     border-right: 2px solid white;
+    overflow: hidden;
 }
 
 .title_task{
@@ -171,7 +172,7 @@ body{
     padding: 0px 10px;
     justify-content: space-between;
     gap: 10px;
-    box-shadow: 0px 0px 5px 4px #4d3771;
+    box-shadow: 0px 0px 5px 2px #4d3771;
 }
 
 .check_task{
@@ -221,6 +222,7 @@ body{
 
 .container_task_completed{
     width: 50%;
+    overflow: hidden;
 }
 
 .container_task_completed .title_task{
@@ -237,7 +239,9 @@ body{
 
 @media (max-width: 650px){
     .container{
-        height: 200vh
+        height: max-content;
+        gap: 30px;
+        padding: 30px;
     }
     .container_add_task{
         width: 60%;
