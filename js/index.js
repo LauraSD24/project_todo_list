@@ -1,3 +1,4 @@
+import {get_date,validate_empty_fields,add_task} from "./functions.js";
 
 window.addEventListener("DOMContentLoaded",()=>{
     // elementos donde se muestra la fecha
@@ -5,31 +6,23 @@ window.addEventListener("DOMContentLoaded",()=>{
     const number_month = document.querySelector(".number_month");
     const number_year = document.querySelector(".number_year");
     const week_day = document.querySelector(".week_day");
+    // elementos para agregar tarea
+    const input_add_task = document.querySelector(".input_add_task");
+    const icon_add = document.querySelector(".icon_add");
 
-    const date = new Date();
-
-    console.log(date.getDay())
-    // función para pasar los datos de día, mes y año a los elementos correspondientes
-    function get_date() {
-        const days = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
-        let day =`${date.getDate()}`;
-        let month = `${date.getMonth()}`
-        let year = `${date.getFullYear()}`
-
-        // condiciones para validar que se agreguen dos dígitos en el número de día y mes
-        if(day.length === 1){
-            number_day.innerText = "0"+day;
+    get_date(number_day,number_month,number_year,week_day);
+    
+    icon_add.addEventListener("click",()=>{
+        if(validate_empty_fields(input_add_task)){
+            alert("el campo de entrada esta vacio");
         }else{
-            number_day.innerText = day;
+            add_task(input_add_task);
+            input_add_task.value = "";
         }
-        if(month.length === 1){
-            number_month.innerText = "0"+month;
-        }else{
-            number_month.innerText = month;
-        }
+    })
 
-        number_year.innerText = year.slice(year.length-2);
-        week_day.innerText = days[date.getDay()]
-    }
-    get_date();
+    
+    /*
+    archivos: index.js(elementos, arrays y eventos)  -  service.js(funciones)
+    */
 })

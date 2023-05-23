@@ -268,12 +268,9 @@ body{
     }
 }
 
-@media (max-width: 375px){
-    .container_add_task{
-        width: 80%;
-    }
-    .container_task{
-        width: 90%;
+@media (max-width:425px){
+    .container_add_task, .container_task{
+        width: 95%;
     }
 }
 
