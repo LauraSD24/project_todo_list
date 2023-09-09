@@ -129,7 +129,7 @@ body{
 
 .container_task{
     width: 80%;
-    height: 300px;
+    height: 340px;
     background-color: var(--color_violet_transparent);
     border-radius: var(--radius);
     display: flex;
@@ -138,6 +138,7 @@ body{
 .container_task_inprocess{
     /* border: var(--border); */
     width: 50%;
+    height: 100%;
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
     border-right: 2px solid white;
@@ -155,16 +156,22 @@ body{
 }
 
 .container_list_task{
+    /* border: var(--border); */
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+    max-height: 300px;
+    width: 100%;
     padding: 15px;
+    overflow: auto;
 }
 
 .task{
     /* border: var(--border); */
-    width: 95%;
-    height: 50px;
+    width: 95% !important; 
+    max-height: 50px;
+    min-height: 50px;
     border-radius: var(--radius);
     background-color: var(--color_purple_moderate);
     display: flex;
@@ -204,7 +211,10 @@ body{
 }
 
 .description_task{
-    border: var(--border);
+    width: 75%;
+    text-align: center;
+    /* border: var(--border); */
+    /* width: 100%; */
     /* width: 60%; */
 }
 
@@ -222,7 +232,7 @@ body{
 
 .container_task_completed{
     width: 50%;
-    overflow: hidden;
+    height: 100%;
 }
 
 .container_task_completed .title_task{
@@ -233,6 +243,99 @@ body{
     font-weight: 800;
     font-size: var(--font_size_text);
     color: var(--color_dark_purple);
+}
+
+/* ------------ modal --------------- */
+
+.container_modal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.295);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s all ;
+}
+.modal{
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    color: black;
+    padding: 20px;
+    position: relative;
+}
+.icon_modal{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90px;
+    height: 90px;
+    color: green;
+    text-align: center;
+    animation: show_icon .5s linear;
+}
+.icon_inform{
+    background-image: url(../icons/bx-check-circle.svg);
+    /* background-image: url(../icons/icon_cross.svg); */
+}
+@keyframes show_icon{
+    from{
+        transform: scale(0);
+    } to{
+        transform: scale(1);
+    }
+}
+.icon_close_modal{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.btn_modal{
+    background-color: var(--color_purple);
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.btn_modal:hover{
+    background-color: #3e2f58;
+}
+.btn_modal_inform{
+    width: 55px;
+    height: 35px;
+}
+.ocult{
+    display: none;
+}
+.icon_confirm{
+    background-image: url(../icons/exclamation.svg);
+}
+.container_btns{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn_modal_confirm{
+    width: 45%;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.input_update{
+    width: 80%;
+    height: 40px;
+    font-size: var(--font_size_text);
+    padding: 0px 8px;
 }
 
 /* ------------ media querys ---------------- */

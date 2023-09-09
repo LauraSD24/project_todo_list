@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
     <link rel="stylesheet" href="style/style.css" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -38,6 +38,7 @@
       <div class="container_add_task">
         <input
           type="text"
+          maxlength="40"
           placeholder="Añadir tarea . . ."
           class="input_add_task"
         /><i class="fa-solid fa-plus icon_add"></i>
@@ -45,20 +46,20 @@
       <div class="container_task">
         <div class="container_task_inprocess">
           <h3 class="title_task">En proceso</h3>
-          <div class="container_list_task">
-            <div class="task">
-              <input type="checkbox" class="check_task" id="check_in_process"/><label for="check_in_process" class="label_check"></label>
+          <div class="container_list_task container_list_task_process">
+            <!-- <div class="task">
+              <input type="checkbox" checked class="check_task" id="check_in_process"/><label for="check_in_process" class="label_check"></label>
               <p class="description_task">Tarea 1</p>
               <div class="container_icons_task">
                 <i class="fa-regular fa-pen-to-square icon_task"></i>
                 <i class="fa-solid fa-trash-can icon_task"></i>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="container_task_completed">
           <h3 class="title_task">Finalizadas</h3>
-          <div class="container_list_task">
+          <div class="container_list_task container_list_task_completed">
             <div class="task">
               <input type="checkbox" class="check_task" id="check_completed"/><label for="check_completed" class="label_check"></label>
               <p class="description_task">Tarea 2</p>
@@ -68,6 +69,36 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="container_modal container_modal_inform ocult">
+      <div class="modal modal_inform">
+        <i class="fa-solid fa-xmark icon_close_modal"></i>
+        <figure class="icon_modal icon_inform"></figure>
+        <h3 class="message_modal message_modal_inform">Tarea guardada correctamente</h3>
+        <button class="btn_modal btn_modal_inform">ok</button>
+      </div>
+    </div>
+    <div class="container_modal container_modal_confirm ocult">
+      <div class="modal modal_confirm">
+        <i class="fa-solid fa-xmark icon_close_modal"></i>
+        <figure class="icon_modal icon_confirm"></figure>
+        <h3 class="message_modal message_modal_confirm">¿Está seguro de eliminar la tarea?</h3>
+        <div class="container_btns">
+          <button class="btn_modal btn_modal_confirm btn_cancel">Cancelar</button>
+          <button class="btn_modal btn_modal_confirm btn_acept">Aceptar</button>
+        </div>
+      </div>
+    </div>
+    <div class="container_modal container_modal_update ocult">
+      <div class="modal modal_update">
+        <i class="fa-solid fa-xmark icon_close_modal"></i>
+        <h3 class="message_modal message_modal_confirm">Descripción:</h3>
+        <input type="text" class="input_update">
+        <div class="container_btns">
+          <button class="btn_modal btn_modal_confirm btn_cancel_update">Cancelar</button>
+          <button class="btn_modal btn_modal_confirm btn_update">Actualizar</button>
         </div>
       </div>
     </div>
